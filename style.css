@@ -1,0 +1,12 @@
+.contents{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#color{
+    font-size: xx-large;
+    font-weight: 800;
+}

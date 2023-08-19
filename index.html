@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Picker</title>
+</head>
+<body>
+    <div class="contents">
+        <img src="https://thumbs.dreamstime.com/b/abstract-creative-illustration-colorful-lion-abstract-creative-illustration-colorful-lion-black-color-190846410.jpg"/>
+        <button onclick=find()>pick a color</button>
+        <div id="color"></div>
+    </div>
+    <script>
+        async function find(){
+            const select_color = new EyeDropper();
+            const coloring =await select_color.open();
+            console.log(coloring);
+            let clr=document.getElementById("color");
+            clr.innerHTML=coloring.sRGBHex;
+            if(coloring.sRGBHex=="#ffffff"){
+                clr.style.color="#000000"
+            }
+            else{
+                clr.style.color=coloring.sRGBHex;
+            }
+        }
+    </script>
+</body>
+</html>
